@@ -98,7 +98,6 @@ const Work = () => {
             borderRadius='md'
             bgColor={work.bgColor}
             cursor='pointer'
-           
           >
             <Box className='app-flex app-work-image'>
               <Image
@@ -129,7 +128,6 @@ const Work = () => {
                     transition={{
                       duration: 0.25,
                     }}
-                    className='app-flex'
                   >
                     <Box className='app-work-inner-img'>
                       <Icon
@@ -150,7 +148,6 @@ const Work = () => {
                     transition={{
                       duration: 0.25,
                     }}
-                    className='app-flex'
                   >
                     <Box className='app-work-inner-img'>
                       <Icon
@@ -193,9 +190,4 @@ const Work = () => {
   )
 }
 
-export default AppWrap(
-  MotionWrap(Work, 'app-works'),
-  'work',
-  'app-dark-bg'
-)
-
+export default AppWrap(MotionWrap(Work, 'app-works'), 'work', 'app-dark-bg')

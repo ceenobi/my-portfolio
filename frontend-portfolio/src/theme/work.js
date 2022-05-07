@@ -39,6 +39,7 @@ const work = extendTheme({
         w: '100%',
         h: { base: '230px', '2xl': '350px' },
         position: 'relative',
+        _hover:{transition:'all 0.3s ease'},
       },
       '.app-work-hover': {
         position: 'absolute',

@@ -140,7 +140,7 @@ const customTheme = extendTheme(
     components: {
       Button: {
         baseStyle: {
-          fontWeight: 'bold',
+          fontWeight: 'extrabold',
           borderRadius: 'base',
           bg: 'pallete.200',
           color: 'paint.200',

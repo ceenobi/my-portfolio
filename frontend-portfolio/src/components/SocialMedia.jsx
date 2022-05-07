@@ -18,7 +18,7 @@ export default function SocialMedia() {
         display='flex'
         justify='center'
         align='center'
-        m='0.28rem 0'
+        my={2}
         bgColor='paint.700'
         transition='all 0.3s ease-in-out'
         _hover={{
@@ -42,7 +42,7 @@ export default function SocialMedia() {
         display='flex'
         justify='center'
         align='center'
-        m='0.28rem 0'
+        my={2}
         bgColor='paint.700'
         transition='all 0.3s ease-in-out'
         _hover={{
@@ -63,7 +63,7 @@ export default function SocialMedia() {
         display='flex'
         justify='center'
         align='center'
-        m='0.28rem 0'
+        my={2}
         bgColor='paint.700'
         transition='all 0.3s ease-in-out'
         _hover={{
@@ -71,12 +71,7 @@ export default function SocialMedia() {
           borderColor: 'pallete.100',
         }}
       >
-        <Icon
-          as={FaFacebookF}
-          boxSize='15px'
-          m='auto'
-          color='pallete.200'
-        />
+        <Icon as={FaFacebookF} boxSize='15px' m='auto' color='pallete.200' />
       </Box>
     </Flex>
   )

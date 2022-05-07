@@ -29,13 +29,10 @@ const work = extendTheme({
         color: '#000',
         transition: 'all 0.3s ease-in-out',
         _hover: {
-          base: 'none',
-          md: {
-            boxShadow: '9px 8px 40px -5px rgba(255,255,255,0.75)',
-            _webkit_boxShadow: '9px 8px 40px -5px rgba(255,255,255,0.75)',
-            _moz_boxShadow: '9px 8px 40px -5px rgba(255,255,255,0.75)',
-            //transition: 'all 0.3s ease-in-out',
-          },
+           boxShadow: {
+            base: 'none',
+            md: '9px 8px 40px -5px rgba(255,255,255,0.75)',
+          }
         },
       },
       '.app-work-image': {

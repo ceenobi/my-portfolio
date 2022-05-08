@@ -25,21 +25,21 @@ const work = extendTheme({
       '.app-work-item': {
         w: { base: '100%', lg: '250px', '2xl': '430px' },
         flexDirection: 'column',
+        position:'relative',
         p: { base: '1rem', '2xl': '1.25rem' },
         color: '#000',
         transition: 'all 0.3s ease-in-out',
         _hover: {
-           boxShadow: {
+          boxShadow: {
             base: 'none',
             md: '9px 8px 40px -5px rgba(255,255,255,0.75)',
-          }
+          },
         },
       },
       '.app-work-image': {
         w: '100%',
         h: { base: '230px', '2xl': '350px' },
         position: 'relative',
-        _hover:{transition:'all 0.3s ease'},
       },
       '.app-work-hover': {
         position: 'absolute',
@@ -51,16 +51,14 @@ const work = extendTheme({
         bgColor: 'rgba(0, 0, 0, 0.5)',
         transition: 'all 0.3s ease',
         opacity: '0',
-        w: '100%',
-        h: '100%',
+        boxSize: '100%',
       },
       '.app-work-inner-img': {
-        boxSize: '50px',
+        boxSize: '60px',
         borderRadius: 'full',
         bgColor: 'rgba(0, 0, 0, 0.5)',
         color: '#fff',
         m: '1rem',
-        fontWeight: 'extrabold',
         cursor: 'pointer',
         transition: 'all 0.3s ease',
         display: 'flex',

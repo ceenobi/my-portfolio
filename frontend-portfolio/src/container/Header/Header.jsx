@@ -6,16 +6,16 @@ import {BsArrowRightShort} from 'react-icons/bs'
 import { images } from '../../constants'
 import { AppWrap } from '../../wrapper'
 
-const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  },
-}
+// const scaleVariants = {
+//   whileInView: {
+//     scale: [0, 1],
+//     opacity: [0, 1],
+//     transition: {
+//       duration: 1,
+//       ease: 'easeInOut',
+//     },
+//   },
+// }
 
 const Header = () => {
   return (
@@ -27,7 +27,7 @@ const Header = () => {
       flexDirection={{ base: 'column', lg: 'row' }}
       w='100%'
       h='100%'
-      p={{ base: '4rem 1rem 1rem', lg: '6rem 2rem 0rem' }}
+      p={{ base: '4rem 1rem 1rem', lg: '5rem 1rem 0rem' }}
       pt={{ '2xl': '8rem' }}
     >
       <Flex
@@ -40,6 +40,7 @@ const Header = () => {
         alignItems='flex-start'
         h='100%'
         mb={10}
+        mt={{ base:'null', lg:'5rem' }}
         w={{ base: '100%', lg: null }}
         mr={{ base: '0rem', lg: null }}
       >
@@ -91,7 +92,14 @@ const Header = () => {
               </Heading>
             </Box>
           </Flex>
-          <Button mt={10} size='xl' as={Link} href='#contact' variant='with-base'  rightIcon={<BsArrowRightShort/>}>
+          <Button
+            mt={10}
+            size='xl'
+            as={Link}
+            href='#contact'
+            variant='with-base'
+            rightIcon={<BsArrowRightShort />}
+          >
             HIRE ME
           </Button>
         </Box>
@@ -133,16 +141,9 @@ const Header = () => {
 
       <Flex
         as={motion.div}
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
         flex='0.75'
-        flexDirection={{ base: 'row', lg: 'column' }}
-        justify='space-evenly'
-        align='flex-start'
-        h='100%'
-        ml={{ base: '0', lg: '1rem' }}
-        w={{ base: '100%', lg: null }}
-        flexWrap={{ base: 'wrap', lg: null }}
       >
         <Image
           src={images.profile}
@@ -151,22 +152,6 @@ const Header = () => {
           zIndex={1}
           objectFit='contain'
         />
-        {/* {[images.flutter, images.redux, images.sass].map((circle, index) => (
-          <Box
-            key={`circle-${index}`}
-            className='logo'
-            bg='paint.700'
-            boxShadow='base'
-            display='flex'
-            justify='center'
-            align='center'
-            boxSize='100px'
-            borderRadius='full'
-            m={{ base: '1rem', lg: null }}
-          >
-            <Image src={circle} alt='profilebg' boxSize='60%' m='auto' />
-          </Box>
-        ))} */}
       </Flex>
     </Box>
   )

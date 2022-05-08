@@ -69,7 +69,6 @@ const Work = () => {
           </Box>
         ))}
       </Flex>
-
       <Grid
         templateColumns={{
           sm: 'repeat(2, 1fr)',
@@ -83,14 +82,8 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         gap={5}
-        mt='2rem'
+        py='5rem'
       >
-        {/* <Flex
-        as={motion.div}
-        animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className='app-work-portfolio'
-      > */}
         {filterWork.map((work, index) => (
           <Box
             key={index}
@@ -107,19 +100,82 @@ const Work = () => {
                 borderRadius='md'
                 objectFit='cover'
               />
+              <Box display={{ base: 'none', lg: 'block' }}>
+                <HStack
+                  as={motion.div}
+                  whileHover={{ opacity: [0, 1] }}
+                  transition={{
+                    duration: 0.25,
+                    ease: 'easeInOut',
+                    staggerChildren: 0.5,
+                  }}
+                  spacing='6px'
+                  justify='center'
+                  className='app-work-hover'
+                >
+                  <Link href={work.projectLink} isExternal rel='noreferrer'>
+                    <Box
+                      as={motion.div}
+                      whileInView={{ scale: [0, 1] }}
+                      whileHover={{ scale: [1, 0.9] }}
+                      transition={{
+                        duration: 0.25,
+                      }}
+                    >
+                      <Box className='app-work-inner-img'>
+                        <Icon
+                          as={AiFillEye}
+                          boxSize='70%'
+                          color='paint.700'
+                          m='auto'
+                        />
+                      </Box>
+                    </Box>
+                  </Link>
 
-              <HStack
-                as={motion.div}
-                whileHover={{ opacity: [0, 1] }}
-                transition={{
-                  duration: 0.25,
-                  ease: 'easeInOut',
-                  staggerChildren: 0.5,
-                }}
-                spacing='6px'
-                justify='center'
-                className='app-work-hover'
-              >
+                  <Link href={work.codeLink} isExternal rel='noreferrer'>
+                    <Box
+                      as={motion.div}
+                      whileInView={{ scale: [0, 1] }}
+                      whileHover={{ scale: [1, 0.9] }}
+                      transition={{
+                        duration: 0.25,
+                      }}
+                    >
+                      <Box className='app-work-inner-img'>
+                        <Icon
+                          as={AiFillGithub}
+                          boxSize='70%'
+                          color='paint.700'
+                          m='auto'
+                        />
+                      </Box>
+                    </Box>
+                  </Link>
+                </HStack>
+              </Box>
+            </Box>
+
+            <Box className='app-work-content'>
+              <VStack spacing='4px'>
+                <Text
+                  textStyle='h4'
+                  mt={{ base: '1rem', '2xl': '3rem' }}
+                  color='paint.100'
+                  textAlign='left'
+                >
+                  {work.title}
+                </Text>
+                <Text textStyle='p' color='paint.100' textAlign='left'>
+                  {work.description}
+                </Text>
+              </VStack>
+              <Box className=' app-work-tag' borderRadius='md' bgColor='#fff'>
+                <Text textStyle='p'>{work.tags[0]}</Text>
+              </Box>
+            </Box>
+            <Box display={{ base: 'block', lg: 'none' }}>
+              <HStack spacing={6} justify='center'>
                 <Link href={work.projectLink} isExternal rel='noreferrer'>
                   <Box
                     as={motion.div}
@@ -132,7 +188,7 @@ const Work = () => {
                     <Box className='app-work-inner-img'>
                       <Icon
                         as={AiFillEye}
-                        boxSize='70%'
+                        boxSize='40%'
                         color='paint.700'
                         m='auto'
                       />
@@ -152,7 +208,7 @@ const Work = () => {
                     <Box className='app-work-inner-img'>
                       <Icon
                         as={AiFillGithub}
-                        boxSize='70%'
+                        boxSize='40%'
                         color='paint.700'
                         m='auto'
                       />
@@ -160,28 +216,6 @@ const Work = () => {
                   </Box>
                 </Link>
               </HStack>
-            </Box>
-
-            <Box className='app-flex app-work-content'>
-              <VStack spacing='4px'>
-                <Box
-                  textStyle='h4'
-                  mt={{ base: '1rem', '2xl': '3rem' }}
-                  color='paint.100'
-                >
-                  {work.title}
-                </Box>
-                <Text textStyle='p' color='paint.100'>
-                  {work.description}
-                </Text>
-              </VStack>
-              <Box
-                className='app-flex app-work-tag'
-                borderRadius='md'
-                bgColor='#fff'
-              >
-                <Text textStyle='p'>{work.tags[0]}</Text>
-              </Box>
             </Box>
           </Box>
         ))}

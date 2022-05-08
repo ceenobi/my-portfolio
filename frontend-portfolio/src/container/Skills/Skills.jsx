@@ -23,7 +23,7 @@ const Skills = () => {
       <Box textStyle='h1' color='paint.700'>Skills & Experience</Box>
       <Flex
         w={{ base: '100%', lg: '80%' }}
-        mt='3rem'
+        mt='2rem'
         direction={{ base: 'column', lg: 'row' }}
       >
         <Flex
@@ -104,7 +104,7 @@ const Skills = () => {
                         aria-label='A tooltip'
                         p={3}
                       >
-                        <Text textStyle='p' fontWeight='extrabold'>
+                        <Text textStyle='p' fontWeight='extrabold' _hover={{ color: 'paint.100' }}>
                           {' '}
                           {work.name}
                         </Text>

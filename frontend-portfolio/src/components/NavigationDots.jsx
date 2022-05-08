@@ -9,7 +9,7 @@ export default function NavigationDots({ active }) {
       align='center'
       direction='column'
       display={{ base: 'none', sm: 'block' }}
-      mt='15rem'
+      m='auto'
       p='1rem'
     >
       {exploreRouterMenu.map((menu) => (

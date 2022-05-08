@@ -13,8 +13,8 @@ const AppWrap = (Component, idName, classNames) =>
       >
         <SocialMedia />
         <Flex
-          justify='center'
-          align='center'
+          justify='flex-end'
+          align='flex-end'
           flex='1'
           w='100%'
           direction='column'

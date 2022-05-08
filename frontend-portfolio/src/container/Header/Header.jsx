@@ -6,17 +6,6 @@ import {BsArrowRightShort} from 'react-icons/bs'
 import { images } from '../../constants'
 import { AppWrap } from '../../wrapper'
 
-// const scaleVariants = {
-//   whileInView: {
-//     scale: [0, 1],
-//     opacity: [0, 1],
-//     transition: {
-//       duration: 1,
-//       ease: 'easeInOut',
-//     },
-//   },
-// }
-
 const Header = () => {
   return (
     <Box
@@ -84,10 +73,10 @@ const Header = () => {
               👋
             </Box>
             <Box ml={2}>
-              <Heading as='h1' fontSize={{ base: '3rem', '2xl': '5rem' }}>
+              <Heading as='h1' fontSize={{ base: '1.8rem', sm:'3rem', '2xl': '5rem' }}>
                 I'm Charles
               </Heading>
-              <Heading as='h1' fontSize={{ base: '4.5rem', '2xl': '5rem' }}>
+              <Heading as='h1' fontSize={{ base: '2.5rem', sm: '4.5rem', '2xl': '5rem' }}>
                 Mbachu
               </Heading>
             </Box>

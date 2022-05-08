@@ -8,7 +8,7 @@ export default function NavigationDots({ active }) {
       justify='center'
       align='center'
       direction='column'
-      display={{ base: 'none', sm: 'block' }}
+      display={{ base: 'none', md: 'block' }}
       m='auto'
       p='1rem'
     >

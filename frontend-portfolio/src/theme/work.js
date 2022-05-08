@@ -23,8 +23,11 @@ const work = extendTheme({
         align: 'center',
       },
       '.app-work-item': {
-        w: { base: '100%', lg: '250px', '2xl': '430px' },
+         w: { base: '300px', lg: '250px', '2xl': '430px' },
+        display:'flex',
         flexDirection: 'column',
+        flex: '0 0 auto',
+        mr: '2rem',
         position:'relative',
         p: { base: '1rem', '2xl': '1.25rem' },
         color: '#000',

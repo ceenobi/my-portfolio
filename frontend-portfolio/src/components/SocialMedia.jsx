@@ -10,7 +10,7 @@ export default function SocialMedia() {
       m='auto'
       direction='column'
       p='1rem'
-      display={{ base: 'none', sm: 'block' }}
+      display={{ base: 'none', md: 'block' }}
     >
         <Box
           boxSize='40px'

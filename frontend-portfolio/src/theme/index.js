@@ -145,6 +145,7 @@ const customTheme = extendTheme(
           bg: 'pallete.200',
           color: 'paint.200',
           transition: 'all 0.2s cubic-bezier(.08,.52,.52,1)',
+          textTransform: 'uppercase',
           _hover: {
             textDecoration: 'none',
           },
@@ -160,11 +161,8 @@ const customTheme = extendTheme(
         variants: {
           'with-shadow': {
             bg: 'pallete.100',
-            color: 'paint.500',
-            boxShadow: 'paint.100',
-            _hover: {
-              color: 'pallete.200',
-            },
+            color: 'pallete.200',
+            boxShadow: 'pallete.100',
           },
           'with-base': {
             bg: 'pallete.100',

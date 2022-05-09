@@ -96,7 +96,7 @@ const Work = () => {
                   borderRadius='md'
                   objectFit='cover'
                 />
-                <Box display={{ base: 'none', lg: 'block' }}>
+                <Box display={{ base: 'none', xl: 'block' }}>
                   <HStack
                     as={motion.div}
                     whileHover={{ opacity: [0, 1] }}
@@ -150,7 +150,7 @@ const Work = () => {
                     </Link>
                   </HStack>
                 </Box>
-                <Box display={{ base: 'block', lg: 'none' }}>
+                <Box display={{ base: 'block', xl: 'none' }}>
                   <HStack
                     spacing={6}
                     justify='center'

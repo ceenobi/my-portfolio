@@ -23,7 +23,7 @@ const work = extendTheme({
         align: 'center',
       },
       '.app-work-item': {
-        w: { base: '250px','2xl': '430px' },
+        //w: { base: '330px', md: '370px', lg:'400px', '2xl': '430px' },
         display: 'flex',
         flexDirection: 'column',
         mr: '1rem',
@@ -39,7 +39,7 @@ const work = extendTheme({
         },
       },
       '.app-work-image': {
-        w: '100%',
+        w: { base: '230px', md: '270px', lg: '300px', '2xl': '430px' },
         h: { base: '230px', '2xl': '350px' },
         position: 'relative',
       },
@@ -78,6 +78,14 @@ const work = extendTheme({
         padding: '0.5rem 1rem',
         top: '-25px',
         right: '25px',
+      },
+      '.app-work-github': {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        bottom: '0',
+        right: '0',
+        boxSize: '100%',
       },
     },
   },

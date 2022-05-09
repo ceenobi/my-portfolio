@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Flex, Image, Text, Tooltip, Container } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Image,
+  Text,
+  Tooltip,
+  Container,
+  Icon,
+} from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { AppWrap, MotionWrap} from '../../wrapper'
+import { BsFillQuestionCircleFill } from 'react-icons/bs'
+
+import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 
 const Skills = () => {
@@ -20,12 +30,10 @@ const Skills = () => {
   }, [])
   return (
     <Container maxW='container.2xl'>
-      <Box textStyle='h1' color='paint.700'>Skills & Experience</Box>
-      <Flex
-        w='100%'
-        mt='2rem'
-        direction={{ base: 'column', lg: 'row' }}
-      >
+      <Box textStyle='h1' color='paint.700'>
+        Skills & Experience
+      </Box>
+      <Flex w='100%' mt='2rem' direction={{ base: 'column', lg: 'row' }}>
         <Flex
           as={motion.div}
           flex='1'
@@ -96,19 +104,27 @@ const Skills = () => {
                       key={work.name}
                       className='app-skills-exp-work'
                     >
-                      <Tooltip
-                        hasArrow
-                        label={work.desc}
-                        bg='pallete.100'
-                        color='paint.300'
-                        aria-label='A tooltip'
-                        p={3}
-                      >
-                        <Text textStyle='p' fontWeight='extrabold' _hover={{ color: 'paint.100' }}>
-                          {' '}
+                      <Box display='flex'>
+                        <Text textStyle='p' fontWeight='extrabold' mr='5px'>
                           {work.name}
                         </Text>
-                      </Tooltip>
+                        <Tooltip
+                          hasArrow
+                          label={work.desc}
+                          bg='pallete.100'
+                          color='paint.300'
+                          aria-label='A tooltip'
+                          p={3}
+                        >
+                          <span>
+                            <Icon
+                              as={BsFillQuestionCircleFill}
+                              color='pallete.100'
+                            />
+                          </span>
+                        </Tooltip>
+                      </Box>
+
                       <Text textStyle='p' mt='5px'>
                         {work.company}
                       </Text>
@@ -124,4 +140,8 @@ const Skills = () => {
   )
 }
 
-export default AppWrap(MotionWrap(Skills, 'app-skills'), 'skills', 'app-brown-bg')
+export default AppWrap(
+  MotionWrap(Skills, 'app-skills'),
+  'skills',
+  'app-brown-bg'
+)

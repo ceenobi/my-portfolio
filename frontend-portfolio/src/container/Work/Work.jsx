@@ -6,7 +6,6 @@ import {
   Image,
   Link,
   Icon,
-  VStack,
   Text,
   Flex,
   HStack,
@@ -151,68 +150,71 @@ const Work = () => {
                     </Link>
                   </HStack>
                 </Box>
+                <Box display={{ base: 'block', lg: 'none' }}>
+                  <HStack
+                    spacing={6}
+                    justify='center'
+                    className='app-work-github'
+                  >
+                    <Link href={work.projectLink} isExternal rel='noreferrer'>
+                      <Box
+                        as={motion.div}
+                        whileInView={{ scale: [0, 1] }}
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{
+                          duration: 0.25,
+                        }}
+                      >
+                        <Box className='app-work-inner-img'>
+                          <Icon
+                            as={AiFillEye}
+                            boxSize='40%'
+                            color='paint.700'
+                            m='auto'
+                          />
+                        </Box>
+                      </Box>
+                    </Link>
+
+                    <Link href={work.codeLink} isExternal rel='noreferrer'>
+                      <Box
+                        as={motion.div}
+                        whileInView={{ scale: [0, 1] }}
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{
+                          duration: 0.25,
+                        }}
+                      >
+                        <Box className='app-work-inner-img'>
+                          <Icon
+                            as={AiFillGithub}
+                            boxSize='40%'
+                            color='paint.700'
+                            m='auto'
+                          />
+                        </Box>
+                      </Box>
+                    </Link>
+                  </HStack>
+                </Box>
               </Box>
 
               <Box className='app-work-content'>
-                <VStack spacing='4px'>
-                  <Text
-                    textStyle='h4'
-                    mt={{ base: '1rem', '2xl': '3rem' }}
-                    color='paint.100'
-                    textAlign='left'
-                  >
-                    {work.title}
-                  </Text>
-                  <Text textStyle='p' color='paint.100' textAlign='left'>
-                    {work.description}
-                  </Text>
-                </VStack>
+                <Text
+                  textStyle='h4'
+                  mt={{ base: '1rem', '2xl': '3rem' }}
+                  color='paint.100'
+                  mb={2}
+                >
+                  {work.title}
+                </Text>
+                <Text textStyle='p' color='paint.100' textAlign='left'>
+                  {work.description}
+                </Text>
+
                 <Box className=' app-work-tag' borderRadius='md' bgColor='#fff'>
                   <Text textStyle='p'>{work.tags[0]}</Text>
                 </Box>
-              </Box>
-              <Box display={{ base: 'block', lg: 'none' }}>
-                <HStack spacing={6} justify='center'>
-                  <Link href={work.projectLink} isExternal rel='noreferrer'>
-                    <Box
-                      as={motion.div}
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.9] }}
-                      transition={{
-                        duration: 0.25,
-                      }}
-                    >
-                      <Box className='app-work-inner-img'>
-                        <Icon
-                          as={AiFillEye}
-                          boxSize='40%'
-                          color='paint.700'
-                          m='auto'
-                        />
-                      </Box>
-                    </Box>
-                  </Link>
-
-                  <Link href={work.codeLink} isExternal rel='noreferrer'>
-                    <Box
-                      as={motion.div}
-                      whileInView={{ scale: [0, 1] }}
-                      whileHover={{ scale: [1, 0.9] }}
-                      transition={{
-                        duration: 0.25,
-                      }}
-                    >
-                      <Box className='app-work-inner-img'>
-                        <Icon
-                          as={AiFillGithub}
-                          boxSize='40%'
-                          color='paint.700'
-                          m='auto'
-                        />
-                      </Box>
-                    </Box>
-                  </Link>
-                </HStack>
               </Box>
             </Box>
           ))}

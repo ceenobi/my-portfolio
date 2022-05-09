@@ -60,7 +60,7 @@ const Footer = () => {
       <Flex justify='center' align='center' flexWrap='wrap' m='4em 2rem 2rem'>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={10}>
           <Flex className='app-footer-cards'>
-            <Image src={images.email} alt='email' boxSize='40px' />
+            <Image src={images.email} alt='email' boxSize='30px' />
             <LinkBox mx='2'>
               <LinkOverlay
                 href='mailto:cobimbachu@gmail.com'
@@ -72,7 +72,7 @@ const Footer = () => {
             </LinkBox>
           </Flex>
           <Flex className='app-footer-cards'>
-            <Image src={images.mobile} alt='mobile' boxSize='40px' />
+            <Image src={images.mobile} alt='mobile' boxSize='30px' />
             <LinkBox mx='3'>
               <LinkOverlay
                 href='tel: +2348132793245'
@@ -93,7 +93,7 @@ const Footer = () => {
               spacing={6}
               mb={4}
               p={6}
-              w={{ base: '300px', md: '500px', lg:'600px', '2xl': '800px' }}
+              w={{ base: '250px', md: '500px', lg:'600px', '2xl': '800px' }}
             >
               <FormControl>
                 <Input
@@ -149,7 +149,7 @@ const Footer = () => {
       )}
       <Flex
         w='100%'
-        p={{ base: '2rem', sm: '2rem 0 0' }}
+        p={{ base: '1rem', sm: '2rem 0 0' }}
         direction='column'
         justify='flex-end'
         align='flex-end'

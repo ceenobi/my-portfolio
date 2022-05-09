@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Flex, Image, Text, Icon, Stack } from '@chakra-ui/react'
+import { Box, Flex, Image, Text, Icon, Stack, Container } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
@@ -34,38 +34,40 @@ const Testimonial = () => {
   }
 
   return (
-    <>
+    <Container maxW='container.2xl'>
       {testimonials.length && (
         <>
-          <Box className='app-flex app-testimonial-item'>
-            <Image
-              src={urlFor(test.imgurl)}
-              alt='testimonials'
-              boxSize={{ base: '100px', '2xl': '150px' }}
-              m='auto'
-              borderRadius='full'
-              objectFit='cover'
-            />
-            <Flex className='app-testimonial-content'>
-              <Text
-                textStyle='p'
-                fontSize={{ base: '1.25rem', '2xl': '2rem' }}
-                color='#221704'
-                lineHeight={{ base: '2rem', '2xl': '3.5rem' }}
-                fontWeight='extrabold'
-              >
-                {test.feedback}
-              </Text>
-              <Stack spacing={1} direction='column' mt={2}>
-                <Box textStyle='h4' fontWeight='medium' color='paint.300'>
-                  {test.name}
-                </Box>
-                <Text color='paint.300' fontWeight='thin'>
-                  {test.company}
+          <Flex justify='center'>
+            <Box className='app-flex app-testimonial-item'>
+              <Image
+                src={urlFor(test.imgurl)}
+                alt='testimonials'
+                boxSize={{ base: '100px', '2xl': '150px' }}
+                m='auto'
+                borderRadius='full'
+                objectFit='cover'
+              />
+              <Flex className='app-testimonial-content'>
+                <Text
+                  textStyle='p'
+                  fontSize={{ base: '1.25rem', '2xl': '2rem' }}
+                  color='#221704'
+                  lineHeight={{ base: '2rem', '2xl': '3.5rem' }}
+                  fontWeight='extrabold'
+                >
+                  {test.feedback}
                 </Text>
-              </Stack>
-            </Flex>
-          </Box>
+                <Stack spacing={1} direction='column' mt={2}>
+                  <Box textStyle='h4' fontWeight='medium' color='paint.300'>
+                    {test.name}
+                  </Box>
+                  <Text color='paint.300' fontWeight='thin'>
+                    {test.company}
+                  </Text>
+                </Stack>
+              </Flex>
+            </Box>
+          </Flex>
           <Box className='app-flex' mt={4}>
             <Stack direction='row' spacing={6}>
               <Box
@@ -116,7 +118,7 @@ const Testimonial = () => {
           </Box>
         ))}
       </Box>
-    </>
+    </Container>
   )
 }
 

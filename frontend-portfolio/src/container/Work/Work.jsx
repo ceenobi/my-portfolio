@@ -10,7 +10,7 @@ import {
   Text,
   Flex,
   HStack,
-  Grid,
+  Container
 } from '@chakra-ui/react'
 
 import { AppWrap, MotionWrap } from '../../wrapper'
@@ -45,14 +45,14 @@ const Work = () => {
   }
 
   return (
-    <>
+    <Container maxW='container.2xl'>
       <Box textStyle='h1' color='paint.700'>
         My Creative
         <Box as='span'> Portfolio </Box>
       </Box>
       <Flex
         direction='row'
-        justify='flex-start'
+        justify='center'
         align='center'
         flexWrap='wrap'
         m='4rem 0 2rem'
@@ -72,8 +72,16 @@ const Work = () => {
       <Flex
         overflowX='scroll'
         flexWrap='nowrap'
-        w={{ base:'90vw', sm:'70vw', md:'68vw', lg:'80vw', xl:'85vw', '2xl':'90vw'}}
+        w={{
+          base: '90vw',
+          sm: '70vw',
+          md: '68vw',
+          lg: '80vw',
+          xl: '85vw',
+          '2xl': '90vw',
+        }}
         p='1rem'
+        mr='50px'
         mt={6}
         as={motion.div}
         animate={animateCard}
@@ -367,7 +375,7 @@ const Work = () => {
           </Box>
         ))} */}
       {/* </Grid> */}
-    </>
+    </Container>
   )
 }
 

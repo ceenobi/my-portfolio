@@ -8,7 +8,7 @@ const footerContact = extendTheme({
         borderRadius: 'md',
         transition: 'all 0.3s ease-in-out',
         p: '1.5rem',
-        w: '100%',
+        w: '250px',
         fontWeight: 'bold',
         _hover: { boxShadow: 'sm' },
       },

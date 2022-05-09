@@ -11,6 +11,7 @@ import {
   Button,
   Stack,
   Text,
+  Container,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
@@ -52,17 +53,11 @@ const Footer = () => {
   }
 
   return (
-    <>
-      <Box textStyle='h1' color='paint.700'>
+    <Container maxW='container.2xl'>
+      <Box textStyle='h1' color='paint.700' className='app-flex'>
         Swing down and Chat with me
       </Box>
-      <Flex
-        justify='space-evenly'
-        align='center'
-        flexWrap='wrap'
-        m='4em 2rem 2rem'
-        w='100%'
-      >
+      <Flex justify='center' align='center' flexWrap='wrap' m='4em 2rem 2rem'>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={10}>
           <Flex className='app-footer-cards'>
             <Image src={images.email} alt='email' boxSize='40px' />
@@ -91,9 +86,15 @@ const Footer = () => {
         </Stack>
       </Flex>
       {!isFormSubmitted ? (
-        <Box w={{ base: '100%', lg: '50%' }} mt={6} p={5}>
+        <Flex mt={6} p={5} justify='center'>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Stack direction='column' spacing='20px' mb={4} p={6}>
+            <Stack
+              direction='column'
+              spacing={6}
+              mb={4}
+              p={6}
+              w={{ base: '300px', md: '500px', lg:'600px', '2xl': '800px' }}
+            >
               <FormControl>
                 <Input
                   id='name'
@@ -133,16 +134,16 @@ const Footer = () => {
                   {errors.message && <span>Please input a message</span>}
                 </Box>
               </FormControl>
+              <Flex justify='center'>
+                <Button type='submit' variant='with-shadow' size='lg'>
+                  {loading ? 'Sending...' : 'Send message'}
+                </Button>
+              </Flex>
             </Stack>
-            <Flex justify='center'>
-              <Button type='submit' variant='with-shadow' size='lg'>
-                {loading ? 'Sending...' : 'Send message'}
-              </Button>
-            </Flex>
           </form>
-        </Box>
+        </Flex>
       ) : (
-        <Box mt={6}>
+        <Box mt={6} className='app-flex'>
           <Box textStyle='h1'>Thank you for getting in touch!</Box>
         </Box>
       )}
@@ -160,7 +161,7 @@ const Footer = () => {
           All rights reserved
         </Text>
       </Flex>
-    </>
+    </Container>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Box, Grid, Image, Text, Center} from '@chakra-ui/react'
+import { Box, Grid, Image, Text, Center, Container} from '@chakra-ui/react'
 import { AppWrap, MotionWrap } from '../../wrapper'
 import { urlFor, client } from '../../client'
 
@@ -16,7 +16,7 @@ const About = () => {
   }, [])
 
   return (
-    <>
+    <Container maxW='container.2xl'>
       <Box textStyle='h1' color='paint.700'>
         I know that
         <Box as='span'> Good Dev </Box> <br /> means
@@ -68,7 +68,7 @@ const About = () => {
           ))}
         </Grid>
       </Center>
-    </>
+    </Container>
   )
 }
 

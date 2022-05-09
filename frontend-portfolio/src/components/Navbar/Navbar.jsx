@@ -38,12 +38,6 @@ export default function Navbar() {
     >
       {/* desktop menu */}
       <Flex justify='flex-start' align='center' flex='1'>
-        {/* <Image
-          src={images.cover}
-          alt='logo'
-          w={{ base: '120px', '2xl': '180px' }}
-          h={{ base: '40px', '2xl': '40px' }}
-        /> */}
         <Heading as='h3' color='pallete.100'>
           Cobi
         </Heading>

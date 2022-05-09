@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Flex, Image, Text, Tooltip } from '@chakra-ui/react'
+import { Box, Flex, Image, Text, Tooltip, Container } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { AppWrap, MotionWrap} from '../../wrapper'
 import { urlFor, client } from '../../client'
@@ -19,10 +19,10 @@ const Skills = () => {
     })
   }, [])
   return (
-    <>
+    <Container maxW='container.2xl'>
       <Box textStyle='h1' color='paint.700'>Skills & Experience</Box>
       <Flex
-        w={{ base: '100%', lg: '80%' }}
+        w='100%'
         mt='2rem'
         direction={{ base: 'column', lg: 'row' }}
       >
@@ -120,7 +120,7 @@ const Skills = () => {
           ))}
         </Flex>
       </Flex>
-    </>
+    </Container>
   )
 }
 

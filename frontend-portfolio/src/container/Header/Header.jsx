@@ -39,7 +39,7 @@ const Header = () => {
             justifyContent={{ base: 'flex-start' }}
             alignItems={{ base: 'flex-start' }}
             flexDirection='column'
-            mt={{base:'null', lg: '5rem'}}
+            mt={{base:'null', xl: '5rem'}}
           >
             <Box
               justify='start'

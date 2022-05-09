@@ -93,7 +93,7 @@ const Footer = () => {
               spacing={6}
               mb={4}
               p={6}
-              w={{ base: '250px', md: '500px', lg:'600px', '2xl': '800px' }}
+              w={{ base: '280px', md: '500px', lg:'600px', '2xl': '800px' }}
             >
               <FormControl>
                 <Input

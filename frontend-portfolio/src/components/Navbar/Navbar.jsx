@@ -13,22 +13,17 @@ import {
   useDisclosure,
   Spacer,
   Link,
-  Heading
+  Heading,
 } from '@chakra-ui/react'
 import { exploreRouterMenu } from '../../constants'
-import { HiMenuAlt4, HiX } from 'react-icons/hi'
+import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const outerBoxStyles = {
-  //   background: 'rgba(255,255,255,0.25)',
-  //   border: '1px solid rgba(255,255,255,0.18)',
-  // }
 
   return (
     <Flex
-      // sx={outerBoxStyles}
       position='fixed'
       align='center'
       justify='space-between'
@@ -70,10 +65,9 @@ export default function Navbar() {
       {/* mobile */}
       <Box display={{ base: 'block', md: 'none' }}>
         <Icon
-          as={HiMenuAlt4}
+          as={HiMenuAlt3}
           width={8}
           height={8}
-          borderRadius='full'
           onClick={isOpen ? onClose : onOpen}
           variant='unstyled'
           color='pallete.100'
@@ -82,7 +76,7 @@ export default function Navbar() {
           placement={'right'}
           onClose={onClose}
           isOpen={isOpen}
-          size='full'
+          size='md'
           as={motion.div}
           whileInView={{ x: [300, 0] }}
           transition={{ duration: 0.85, ease: 'easeOut' }}
@@ -95,7 +89,13 @@ export default function Navbar() {
             boxShadow='md'
           >
             <DrawerHeader>
-              <Icon as={HiX} w={8} h={8} onClick={onClose} color='pallete.100' />
+              <Icon
+                as={HiX}
+                w={8}
+                h={8}
+                onClick={onClose}
+                color='pallete.100'
+              />
             </DrawerHeader>
             <DrawerBody p={2}>
               <VStack alignItems='center' spacing={10}>

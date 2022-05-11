@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
 // import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { motion } from 'framer-motion'
@@ -22,7 +22,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [activeFilter, setActiveFilter] = useState('All')
   const [filterWork, setFilterWork] = useState([])
-  const scrollRef = useRef(null)
+  // const scrollRef = useRef(null)
 
   useEffect(() => {
     const query = '*[_type == "works"]'

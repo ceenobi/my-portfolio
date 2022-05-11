@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import {
   Box,
@@ -20,6 +21,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [activeFilter, setActiveFilter] = useState('All')
   const [filterWork, setFilterWork] = useState([])
+  const scrollRef = useRef(null)
 
   useEffect(() => {
     const query = '*[_type == "works"]'
@@ -43,8 +45,17 @@ const Work = () => {
     }, 500)
   }
 
+  const scroll = (direction) => {
+    const { current } = scrollRef
+    if (direction === 'left') {
+      current.scrollLeft -= 300
+    } else {
+      current.scrollLeft += 300
+    }
+  }
+
   return (
-    <Container maxW='container.2xl'>
+    <Container maxW='container.2xl' position='relative'>
       <Box textStyle='h1' color='paint.700'>
         My Creative
         <Box as='span'> Portfolio </Box>
@@ -68,7 +79,6 @@ const Work = () => {
           </Box>
         ))}
       </Flex>
-
       <Flex
         overflowX='scroll'
         flexWrap='nowrap'
@@ -78,6 +88,7 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='scrolling'
+        ref={scrollRef}
       >
         <Flex flex='0 0 auto' w='70vw'>
           {filterWork.map((work, index) => (
@@ -220,6 +231,32 @@ const Work = () => {
           ))}
         </Flex>
       </Flex>
+      <Flex
+        display={{ base: 'none', lg: 'block' }}
+        position='absolute'
+        bottom='30%'
+        width='100%'
+      >
+        <Flex justify='space-between' align='center' py={1}>
+          <Icon
+            as={HiChevronLeft}
+            fontSize={{ base: '2xl', md: '3xl' }}
+            color='paint.700'
+            cursor='pointer'
+            onClick={() => scroll('left')}
+            style={{ transform: 'translateX(-16px)' }}
+          />
+          <Icon
+            as={HiChevronRight}
+            fontSize={{ base: '2xl', md: '3xl' }}
+            color='paint.700'
+            cursor='pointer'
+            onClick={() => scroll('right')}
+            style={{ transform: 'translateX(4px)' }}
+          />
+        </Flex>
+      </Flex>
+
       {/* <Grid
         templateColumns={{
           sm: 'repeat(2, 1fr)',

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
+// import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import {
   Box,
@@ -12,7 +12,6 @@ import {
   HStack,
   Container,
   Grid,
-  VStack
 } from '@chakra-ui/react'
 
 import { AppWrap, MotionWrap } from '../../wrapper'
@@ -47,17 +46,17 @@ const Work = () => {
     }, 500)
   }
 
-  const scroll = (direction) => {
-    const { current } = scrollRef
-    if (direction === 'left') {
-      current.scrollLeft -= 300
-    } else {
-      current.scrollLeft += 300
-    }
-  }
+  // const scroll = (direction) => {
+  //   const { current } = scrollRef
+  //   if (direction === 'left') {
+  //     current.scrollLeft -= 300
+  //   } else {
+  //     current.scrollLeft += 300
+  //   }
+  // }
 
   return (
-    <Container maxW='container.2xl' position='relative'>
+    <Container maxW='container.2xl'>
       <Box textStyle='h1' color='paint.700'>
         My Creative
         <Box as='span'> Portfolio </Box>

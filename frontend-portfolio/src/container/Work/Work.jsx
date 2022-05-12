@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState , useRef} from 'react'
 import { AiFillEye, AiFillGithub } from 'react-icons/ai'
-// import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import {
   Box,
@@ -22,7 +22,7 @@ const Work = () => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
   const [activeFilter, setActiveFilter] = useState('All')
   const [filterWork, setFilterWork] = useState([])
-  // const scrollRef = useRef(null)
+  const scrollRef = useRef(null)
 
   useEffect(() => {
     const query = '*[_type == "works"]'
@@ -46,17 +46,17 @@ const Work = () => {
     }, 500)
   }
 
-  // const scroll = (direction) => {
-  //   const { current } = scrollRef
-  //   if (direction === 'left') {
-  //     current.scrollLeft -= 300
-  //   } else {
-  //     current.scrollLeft += 300
-  //   }
-  // }
+  const scroll = (direction) => {
+    const { current } = scrollRef
+    if (direction === 'left') {
+      current.scrollLeft -= 500
+    } else {
+      current.scrollLeft += 500
+    }
+  }
 
   return (
-    <Container maxW='container.2xl'>
+    <Container maxW='container.2xl' position='relative'>
       <Box textStyle='h1' color='paint.700'>
         My Creative
         <Box as='span'> Portfolio </Box>
@@ -80,17 +80,26 @@ const Work = () => {
           </Box>
         ))}
       </Flex>
-      {/* <Flex
-        maxW='100%'
+
+      <Flex
+        maxW={{
+          base: '100%',
+          md: '75vw',
+          lg: '82vw',
+          xl: '85vw',
+          '2xl': '90vw',
+        }}
         flex='1'
         p='1rem'
+        overflowX='scroll'
+        className='scrolling'
         mt={6}
         as={motion.div}
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         ref={scrollRef}
       >
-        <Flex className='scrolling' overflowX='scroll'>
+        <Flex m='1rem'>
           {filterWork.map((work, index) => (
             <Box
               key={index}
@@ -232,19 +241,19 @@ const Work = () => {
         </Flex>
       </Flex>
       <Flex
-        //display={{ base: 'none', lg: 'block' }}
+        display={{ base: 'none', lg: 'block' }}
         position='absolute'
-        bottom='50%'
+        bottom='25%'
         width='100%'
       >
-        <Flex justify='space-between' align='center' py={1}>
+        <Flex justify='space-between' align='center'>
           <Icon
             as={HiChevronLeft}
             fontSize={{ base: '2xl', md: '3xl' }}
             color='paint.700'
             cursor='pointer'
             onClick={() => scroll('left')}
-            style={{ transform: 'translateX(-16px)' }}
+            //style={{ transform: 'translateX(-16px)' }}
           />
           <Icon
             as={HiChevronRight}
@@ -252,12 +261,12 @@ const Work = () => {
             color='paint.700'
             cursor='pointer'
             onClick={() => scroll('right')}
-            style={{ transform: 'translateX(4px)' }}
+            //style={{ transform: 'translateX(4px)' }}
           />
         </Flex>
-      </Flex> */}
+      </Flex>
 
-      <Grid
+      {/* <Grid
         templateColumns={{
           sm: 'repeat(2, 1fr)',
           md: 'repeat(2, 1fr)',
@@ -410,7 +419,7 @@ const Work = () => {
             </Box>
           </Box>
         ))}
-      </Grid>
+      </Grid> */}
     </Container>
   )
 }

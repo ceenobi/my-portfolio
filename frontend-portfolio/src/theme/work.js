@@ -23,7 +23,7 @@ const work = extendTheme({
         align: 'center',
       },
       '.app-work-item': {
-        w: { base: '100%', '2xl': '330px' },
+        w: { base: '270px', xl:'370px', '2xl': '330px' },
         display: 'flex',
         flexDirection: 'column',
         mr: '1rem',
@@ -40,7 +40,7 @@ const work = extendTheme({
       },
       '.app-work-image': {
         w: '100%',
-        h: { base: '230px', '2xl': '350px' },
+        h: { base: '230px', xl:'420px', '2xl': '350px' },
         position: 'relative',
       },
       '.app-work-hover': {

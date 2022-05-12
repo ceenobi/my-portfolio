@@ -5,25 +5,25 @@ import { Flex} from '@chakra-ui/react'
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     return (
+      <Flex
+        direction='row'
+        id={idName}
+        w='100%'
+        className={`app-container ${classNames}`}
+      >
+        <SocialMedia />
         <Flex
-          direction='row'
-          id={idName}
+          justify='flex-end'
+          align='flex-end'
+          flex='1'
           w='100%'
-          className={`app-container ${classNames}`}
+          direction='column'
+          p='2rem 1rem'
         >
-          <SocialMedia />
-          <Flex
-            justify='flex-end'
-            align='flex-end'
-            flex='1'
-            w='100%'
-            direction='column'
-            p='2rem 1rem'
-          >
-            <Component />
-          </Flex>
-          <NavigationDots active={idName} />
+          <Component/>
         </Flex>
+        <NavigationDots active={idName} />
+      </Flex>
     )
   }
 

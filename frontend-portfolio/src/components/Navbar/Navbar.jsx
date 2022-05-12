@@ -19,7 +19,7 @@ import { exploreRouterMenu } from '../../constants'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 
-export default function Navbar() {
+export default function Navbar({ active}) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -46,7 +46,7 @@ export default function Navbar() {
         <>
           {exploreRouterMenu.map((menu) => (
             <Link
-              textStyle='p'
+              //textStyle='p'
               key={menu.sectionId}
               href={`#${menu.path}`}
               textTransform='uppercase'
@@ -54,7 +54,7 @@ export default function Navbar() {
               color='pallete.100'
               transition='all 0.3s ease-in-out'
               _hover={{ color: 'paint.700' }}
-              _activeLink={{ color: '#313BAC' }}
+             // _activeLink={active === menu.path ? { backgroundColor: '#313BAC' } : {}}
             >
               {menu.sectionLabel}
             </Link>

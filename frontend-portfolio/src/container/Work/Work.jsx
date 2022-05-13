@@ -84,7 +84,7 @@ const Work = () => {
       <Flex
         maxW={{
           base: '100%',
-          md: '75vw',
+          md: '73vw',
           lg: '80vw',
           xl: '85vw',
           '2xl': '90vw',

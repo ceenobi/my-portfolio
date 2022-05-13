@@ -11,7 +11,7 @@ import {
   Flex,
   HStack,
   Container,
-  Grid,
+  // Grid,
 } from '@chakra-ui/react'
 
 import { AppWrap, MotionWrap } from '../../wrapper'

@@ -54,7 +54,6 @@ export default function Navbar({ active}) {
               color='pallete.100'
               transition='all 0.3s ease-in-out'
               _hover={{ color: 'paint.700' }}
-             // _activeLink={active === menu.path ? { backgroundColor: '#313BAC' } : {}}
             >
               {menu.sectionLabel}
             </Link>
